@@ -56,6 +56,8 @@
   color: #000000;
 }
 
+/* ------------------------------------------------------ */
+
 .cover {
   position: relative;
   z-index: 0;
@@ -128,6 +130,17 @@
   background-color: transparent;
 }
 
+.bet-button:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  scale: 1.09;
+}
+
+.bet-button:active {
+  opacity: 0.3;
+  scale: 0.99;
+}
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -137,6 +150,8 @@
   opacity: 0.6;
   background-color: #000000;
 }
+
+/* ----------------------------------------------------- */
 
 .lots {
   margin-top: 180px;
@@ -217,6 +232,8 @@
   text-underline-position: from-font;
 }
 
+/* Фоновые изображения */
+
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
   background-size: cover;
@@ -235,6 +252,7 @@
   background-position: bottom;
 }
 
+/* ------------------------------------------------------ */
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
@@ -294,6 +312,8 @@
   margin-bottom: 0;
 }
 
+/* ------------------------------------------------------ */
+
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -338,7 +358,6 @@
   justify-self: start;
   text-align: left;
 }
-
 .address.footer__address a {
   color: #000000;
 }
