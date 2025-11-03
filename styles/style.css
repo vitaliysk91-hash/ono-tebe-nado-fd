@@ -45,14 +45,6 @@
   text-align: left;
 }
 
-:root {
-  --title-top: 142px;
-  --title-ls: 0.18em;
-  --row2-left: 117px;
-  --row3-left: 248px;
-  --desc-top: 92px;
-}
-
 .cover {
   position: relative;
   box-sizing: border-box;
@@ -60,20 +52,14 @@
 }
 
 .cover_title {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: var(--title-top) 50px 0;
-  width: 100%;
+  padding: 165px 50px 0;
   color: #fff;
-  font: 700 100px/120px "Raleway", sans-serif;
+  font: 700 100px/130px "Raleway", sans-serif;
   text-transform: uppercase;
-  letter-spacing: var(--title-ls);
+  letter-spacing: 0.3em;
 }
-
 .accent-span {
   display: block;
-  width: 100%;
 }
 .aligned-text_center {
   text-align: center;
@@ -85,28 +71,18 @@
   letter-spacing: normal;
 }
 
-.accent-span:nth-child(1) {
-  padding-left: 0;
-}
-.accent-span:nth-child(2) {
-  padding-left: var(--row2-left);
-}
-.accent-span:nth-child(3) {
-  padding-left: var(--row3-left);
-}
-
 .cover__description {
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
-  padding: var(--desc-top) 50px 0;
+  padding: 106px 50px 0;
 }
 .cover__description-text {
   justify-self: start;
   color: #fff;
   font: 400 22px/28px "Raleway", sans-serif;
   text-transform: uppercase;
-  word-spacing: 18px;
+  word-spacing: 20px;
 }
 .bet-button {
   justify-self: end;
