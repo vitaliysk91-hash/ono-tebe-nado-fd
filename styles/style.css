@@ -46,13 +46,12 @@
 .cover {
   position: relative;
   background: url(../images/cover.jpg) center/cover no-repeat;
-  min-height: 757px;
 }
 
 .cover_title {
   padding: 165px 50px 0;
   color: #fff;
-  font: 700 100px/120px "Raleway", sans-serif;
+  font: 700 100px/130px "Raleway", sans-serif; /* было 120px */
   text-transform: uppercase;
   letter-spacing: 0.3em;
 }
