@@ -8,10 +8,11 @@
 .header__links-list {
   display: flex;
   gap: 32px;
-  list-style: none;
+  list-style: none; /* разделители не меняем (п.5 нет) */
   padding-left: 50px;
   font: 400 18px/21.13px "Raleway", sans-serif;
 }
+
 .header__links-list-item_no-bullit {
   list-style-type: none;
 }
@@ -45,12 +46,13 @@
   text-align: left;
 }
 
+/* cover */
 .cover {
   position: relative;
   box-sizing: border-box;
+  min-height: 757px; /* п.2 */
   background: url(../images/cover.jpg) center/cover no-repeat;
 }
-
 .cover_title {
   padding: 165px 50px 0;
   color: #fff;
@@ -111,6 +113,7 @@
   z-index: 1;
 }
 
+/* lots */
 .lots {
   margin-top: 180px;
   padding: 0 24px;
@@ -185,6 +188,7 @@
   text-decoration: underline;
 }
 
+/* about */
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
@@ -215,7 +219,6 @@
   text-align: left;
   text-transform: uppercase;
 }
-
 .about_box {
   justify-self: end;
   width: 693px;
@@ -231,6 +234,7 @@
   margin-bottom: 0;
 }
 
+/* footer */
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -258,6 +262,7 @@
   list-style: none;
 }
 .footer__social-icon {
+  width: 48px;
   height: 48px;
 }
 
