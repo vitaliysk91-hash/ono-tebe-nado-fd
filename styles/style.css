@@ -54,11 +54,10 @@
   color: #fff;
   font: 700 100px/120px "Raleway", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.27em;
+  letter-spacing: 0.3em;
 }
 .accent-span {
   display: block;
-  position: relative;
 }
 .aligned-text_center {
   text-align: center;
@@ -68,16 +67,6 @@
 }
 .letter-spacing-normal {
   letter-spacing: normal;
-}
-
-.accent-span:nth-child(1) {
-  left: 0;
-}
-.accent-span:nth-child(2) {
-  left: 120px;
-}
-.accent-span:nth-child(3) {
-  left: 250px;
 }
 
 .cover__description {
