@@ -1,21 +1,28 @@
-﻿.header {
+﻿/* ===== HEADER ===== */
+.header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 72px 50px;
+  padding: 92px 50px; /* макетные отступы */
 }
+
 .header_menu ul {
   display: flex;
-  gap: 30px;
+  gap: 32px; /* как в макете */
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none; /* без маркеров */
   font-size: 18px;
   line-height: 21.13px;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .header__links-list-item_no-bullit {
   list-style-type: none;
 }
+
+/* ссылки меню */
 .header__link {
   text-decoration: underline;
   text-underline-position: from-font;
@@ -34,28 +41,43 @@
   height: auto;
 }
 
+/* единый вид контактов (и в header, и в footer) */
 .address {
-  max-width: 240px;
+  max-width: 240px; /* вместо фикс-ширины */
   font-size: 18px;
   line-height: 24.3px;
   font-style: normal;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 .address a {
   color: #000;
+  display: block; /* три ровные строки */
+  line-height: 24px;
+}
+.address p {
+  margin: 0;
+  display: block;
+  line-height: 24px;
 }
 .address.header__address {
   justify-self: end;
   text-align: left;
 }
 
+/* ===== COVER ===== */
 .cover {
   position: relative;
   min-height: 757px;
   background: url(../images/cover.jpg) center/cover no-repeat;
   color: #fff;
 }
+
+/* текст поверх затемнения */
 .cover_title,
-.cover__description {
+.cover__description,
+.card__title,
+.card__text {
   position: relative;
   z-index: 1;
 }
@@ -67,14 +89,19 @@
   font-size: 100px;
   line-height: 115%;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0; /* индивидуально задаём по словам ниже */
 }
-.letter-spacing-extended {
+
+/* разный трекинг для трёх слов без правки HTML */
+.cover_title .accent-span:nth-child(1) {
   letter-spacing: 0.3em;
-}
-.letter-spacing-wide {
+} /* ОНО */
+.cover_title .accent-span:nth-child(2) {
+  letter-spacing: 0.2em;
+} /* ТЕБЕ */
+.cover_title .accent-span:nth-child(3) {
   letter-spacing: 0.6em;
-}
+} /* НАДО */
 
 .accent-span {
   display: block;
@@ -86,44 +113,58 @@
   text-align: right;
 }
 
+/* затемнение между фоном и текстом */
 .overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.6;
-  background: #000;
+  background-color: #000000; /* для cover; в лотах переопределим */
 }
 
 .cover__description {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 60px;
-  padding: 148px 50px 50px;
+  gap: 84px; /* правее/ниже по макету */
+  padding: 150px 50px 50px; /* было 135 — опущено */
 }
+
 .cover__description-text {
   margin: 0;
+  color: #ffffff;
+  font-weight: 400;
   font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 0;
+  word-spacing: 0; /* без разлёта слов */
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .bet-button {
-  width: 268px;
-  min-height: 54px;
-  padding: 14px 36px;
-  border: 2px solid currentColor;
-  background: transparent;
-  color: #fff;
+  justify-self: end;
+  width: auto; /* ширина от контента */
+  min-height: 56px;
+  padding: 14px 36px; /* «мягкая» высота */
+  border: 2px solid #ffffff; /* рамка толще */
+  color: #ffffff;
   font-weight: 500;
   font-size: 22px;
   line-height: 25.83px;
   text-transform: uppercase;
+  background-color: transparent;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 
+/* ===== LOTS ===== */
 .lots {
-  padding: 150px 24px 0;
+  padding: 150px 24px 0; /* минус ~30px сверху, боковые 24 */
 }
+
 .lots__heading {
   margin: 0 0 27px;
   padding-left: 40px;
@@ -131,36 +172,43 @@
   font-size: 40px;
   line-height: 46px;
   text-transform: uppercase;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .lots__card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   margin: 0 0 30px;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
+
 .lots__card-list-item {
-  width: 330px;
-  min-height: 552px;
+  width: 330px; /* чуть уже */
+  min-height: 552px; /* и ниже */
 }
 
 .card-link {
   display: block;
   height: 100%;
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .lot_content {
   position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background-position: bottom;
   background-size: cover;
+  background-position: bottom;
 }
+
+/* только фоновые картинки — без повторения стилей */
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
 }
@@ -171,83 +219,100 @@
   background-image: url(../images/card-lot-03.jpg);
 }
 
-.overlay_type_film {
-  background: rgba(0, 0, 0, 0.45);
+/* более мягкие оверлеи под карточки (тон/контраст) */
+.card_type_film .overlay {
+  background-color: rgba(0, 0, 0, 0.45);
 }
-.overlay_type_book {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+.card_type_book .overlay {
+  background-color: rgba(0, 0, 0, 0.48);
 }
-.overlay_type_picture {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42));
-}
-
-.card__title,
-.card__text {
-  position: relative;
-  z-index: 1;
+.card_type_picture .overlay {
+  background-color: rgba(0, 0, 0, 0.42);
 }
 
 .card__title {
   margin: 0;
   padding: 48px 40px 0;
+  color: #ffffff;
   font-weight: 700;
   font-size: 22px;
   line-height: 26.4px;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
   text-transform: uppercase;
-  text-decoration: underline;
-  color: #fff;
 }
+
 .card__text {
   margin: 0;
   padding: 0 40px 48px;
+  color: #ffffff;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  color: #fff;
+  text-align: left;
 }
 
 .lots__look-more-link {
   display: inline-block;
+  height: 100%;
+  padding-left: 40px;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   text-underline-position: from-font;
 }
 
+/* ===== ABOUT ===== */
 .about {
   display: grid;
   grid-template-columns: 240px 1fr;
   align-items: start;
-  column-gap: 48px;
+  column-gap: 56px; /* больше воздуха */
   row-gap: 0;
   margin-top: 180px;
   padding: 0 24px;
 }
+
 .about__logo {
+  display: grid;
+  place-items: center;
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: #000;
-  display: grid;
-  place-items: center;
+  background-color: #000000;
 }
+
 .about__logo-image {
   width: 148px;
   height: auto;
 }
+
 .about_box {
   padding-top: 8px;
 }
 
 .about__title {
-  margin: 0 0 92px;
+  margin: 0 0 92px; /* ближе к baseline макета */
   font-weight: 700;
   font-size: 40px;
   line-height: 46px;
+  text-align: left;
   text-transform: uppercase;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .about__text {
   margin: 0 0 25px;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 
 /* ===== FOOTER ===== */
@@ -255,23 +320,33 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: start;
-  margin-top: 170px;
-  padding: 0 50px 40px;
+  margin-top: 180px;
+  padding: 0 50px 36px; /* компактнее низ */
   font-size: 18px;
   line-height: 21.13px;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .footer__menu {
-  justify-self: start;
+  justify-self: start; /* левее центра как в макете */
 }
+
 .footer__menu-list {
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
 }
+
+.footer__menu-list-item {
+  list-style-type: none;
+}
+
 .footer__menu-link {
   text-decoration: underline;
 }
+
 .footer__menu-link_active {
   text-decoration: none;
 }
@@ -279,15 +354,17 @@
 .footer__social-list {
   justify-self: end;
   display: flex;
-  gap: 40px;
+  gap: 40px; /* меньше разнос */
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
+
 .footer__social-icon {
   width: 48px;
   height: 48px;
 }
+
 .address.footer__address {
   justify-self: start;
   text-align: left;
