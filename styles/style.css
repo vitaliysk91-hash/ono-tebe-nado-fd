@@ -1,17 +1,31 @@
-﻿/* ===== HEADER ===== */
+﻿/* ===== БАЗА ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  color: #000;
+}
+
+/* ===== HEADER ===== */
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 92px 50px; /* макетные отступы */
+  padding: 92px 50px; /* как в макете */
 }
 
-.header_menu ul {
+/* список в шапке — с маркерами; убираем их только у _no-bullit */
+.header_menu .header__links-list {
   display: flex;
-  gap: 32px; /* как в макете */
+  gap: 32px;
   margin: 0;
   padding: 0;
-  list-style: none; /* без маркеров */
+  list-style: circle;
   font-size: 18px;
   line-height: 21.13px;
   text-decoration-skip-ink: none;
@@ -19,10 +33,9 @@
 }
 
 .header__links-list-item_no-bullit {
-  list-style-type: none;
+  list-style: none;
 }
 
-/* ссылки меню */
 .header__link {
   text-decoration: underline;
   text-underline-position: from-font;
@@ -41,9 +54,9 @@
   height: auto;
 }
 
-/* единый вид контактов (и в header, и в footer) */
+/* контакты: выравнивание по правой направляющей */
 .address {
-  max-width: 240px; /* вместо фикс-ширины */
+  max-width: 240px;
   font-size: 18px;
   line-height: 24.3px;
   font-style: normal;
@@ -52,17 +65,15 @@
 }
 .address a {
   color: #000;
-  display: block; /* три ровные строки */
   line-height: 24px;
 }
 .address p {
   margin: 0;
-  display: block;
   line-height: 24px;
 }
 .address.header__address {
   justify-self: end;
-  text-align: left;
+  text-align: right;
 }
 
 /* ===== COVER ===== */
@@ -73,7 +84,7 @@
   color: #fff;
 }
 
-/* текст поверх затемнения */
+/* этот текст/контент должен быть поверх оверлея */
 .cover_title,
 .cover__description,
 .card__title,
@@ -89,19 +100,16 @@
   font-size: 100px;
   line-height: 115%;
   text-transform: uppercase;
-  letter-spacing: 0; /* индивидуально задаём по словам ниже */
+  letter-spacing: 0; /* сами строки задаём модификаторами ниже */
 }
 
-/* разный трекинг для трёх слов без правки HTML */
-.cover_title .accent-span:nth-child(1) {
-  letter-spacing: 0.3em;
-} /* ОНО */
-.cover_title .accent-span:nth-child(2) {
-  letter-spacing: 0.2em;
-} /* ТЕБЕ */
-.cover_title .accent-span:nth-child(3) {
+/* модификаторы для трекинга трёх строк заголовка */
+.letter-spacing-extended {
   letter-spacing: 0.6em;
-} /* НАДО */
+} /* ОНО / НАДО — шире */
+.letter-spacing-wide {
+  letter-spacing: 0.3em;
+} /* ТЕБЕ — уже */
 
 .accent-span {
   display: block;
@@ -113,7 +121,7 @@
   text-align: right;
 }
 
-/* затемнение между фоном и текстом */
+/* затемнение по всей обложке */
 .overlay {
   position: absolute;
   inset: 0;
@@ -121,15 +129,16 @@
   width: 100%;
   height: 100%;
   opacity: 0.6;
-  background-color: #000000; /* для cover; в лотах переопределим */
+  background-color: #000;
 }
 
+/* подпись и кнопка — как в макете */
 .cover__description {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 84px; /* правее/ниже по макету */
-  padding: 150px 50px 50px; /* было 135 — опущено */
+  gap: 78px;
+  padding: 135px 50px 50px;
 }
 
 .cover__description-text {
@@ -139,17 +148,18 @@
   font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 0; /* без разлёта слов */
+  word-spacing: 0.3em; /* приближение к макету */
+  max-width: 640px; /* контроль переноса строки */
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
 }
 
 .bet-button {
   justify-self: end;
-  width: auto; /* ширина от контента */
-  min-height: 56px;
-  padding: 14px 36px; /* «мягкая» высота */
-  border: 2px solid #ffffff; /* рамка толще */
+  width: 256px;
+  min-height: 51px;
+  padding: 12px 32px; /* компактнее */
+  border: 1px solid #ffffff; /* 1px как в макете */
   color: #ffffff;
   font-weight: 500;
   font-size: 22px;
@@ -161,8 +171,9 @@
 }
 
 /* ===== LOTS ===== */
+/* одинаковые боковые отступы со страницей: по 50px */
 .lots {
-  padding: 150px 24px 0; /* минус ~30px сверху, боковые 24 */
+  padding: 180px 50px 0;
 }
 
 .lots__heading {
@@ -185,9 +196,11 @@
   list-style-type: none;
 }
 
+/* гибкие карточки: тянутся до направляющих, но не меньше базиса 334 */
 .lots__card-list-item {
-  width: 330px; /* чуть уже */
-  min-height: 552px; /* и ниже */
+  flex: 1 1 334px;
+  min-width: 0; /* позволяют ужиматься внутри контейнера */
+  min-height: 596px;
 }
 
 .card-link {
@@ -208,7 +221,6 @@
   background-position: bottom;
 }
 
-/* только фоновые картинки — без повторения стилей */
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
 }
@@ -219,15 +231,11 @@
   background-image: url(../images/card-lot-03.jpg);
 }
 
-/* более мягкие оверлеи под карточки (тон/контраст) */
-.card_type_film .overlay {
-  background-color: rgba(0, 0, 0, 0.45);
-}
-.card_type_book .overlay {
-  background-color: rgba(0, 0, 0, 0.48);
-}
+/* оверлеи — ближе к макетным по контрасту */
+.card_type_film .overlay,
+.card_type_book .overlay,
 .card_type_picture .overlay {
-  background-color: rgba(0, 0, 0, 0.42);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .card__title {
@@ -268,12 +276,12 @@
 /* ===== ABOUT ===== */
 .about {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 334px 1fr;
   align-items: start;
-  column-gap: 56px; /* больше воздуха */
+  column-gap: 25px;
   row-gap: 0;
   margin-top: 180px;
-  padding: 0 24px;
+  padding: 0 50px; /* 50px по бокам, как в хедере/футере */
 }
 
 .about__logo {
@@ -291,11 +299,11 @@
 }
 
 .about_box {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .about__title {
-  margin: 0 0 92px; /* ближе к baseline макета */
+  margin: 0 0 100px;
   font-weight: 700;
   font-size: 40px;
   line-height: 46px;
@@ -321,7 +329,7 @@
   grid-template-columns: 1fr min-content 1fr;
   align-items: start;
   margin-top: 180px;
-  padding: 0 50px 36px; /* компактнее низ */
+  padding: 0 50px 36px;
   font-size: 18px;
   line-height: 21.13px;
   text-decoration-skip-ink: none;
@@ -329,7 +337,7 @@
 }
 
 .footer__menu {
-  justify-self: start; /* левее центра как в макете */
+  justify-self: start;
 }
 
 .footer__menu-list {
@@ -342,19 +350,20 @@
 .footer__menu-list-item {
   list-style-type: none;
 }
-
 .footer__menu-link {
   text-decoration: underline;
 }
-
 .footer__menu-link_active {
   text-decoration: none;
 }
 
+/* соцсети: ширина контейнера и выравнивание по правой направляющей */
 .footer__social-list {
   justify-self: end;
   display: flex;
-  gap: 40px; /* меньше разнос */
+  justify-content: flex-end;
+  gap: 40px;
+  min-width: 224px; /* 48*3 + 40*2 — «держим» положение блока */
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -367,5 +376,5 @@
 
 .address.footer__address {
   justify-self: start;
-  text-align: left;
+  text-align: right;
 }
