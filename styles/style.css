@@ -1,368 +1,382 @@
-﻿.section-width {
-  max-width: 1340px;
-  margin: 0 auto;
+﻿.header {
+  margin: 92px 50px 96px 50px;
+  display: grid;
+  grid-template-columns: 3.9fr 0.9fr 3.9fr;
 }
 
-.header {
-  padding: 90px 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.header__links-list {
+  display: flex;
   align-items: center;
 }
 
-.header__navigation {
-  justify-self: start;
-}
-
-.header__menu {
+.header__links-list-main {
   display: flex;
-  gap: 33px;
-  min-width: 388px;
+  align-items: center;
+  gap: 32px;
 }
 
-.header__menu-inner {
+.header__links-list-item,
+.header__links-list-item_no-bullit {
+  display: list-item;
+  list-style-type: none;
+}
+
+.header__link_active,
+.header__link {
+  text-decoration: none;
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 18px;
+  font-style: normal;
   font-weight: 400;
-  list-style: circle;
-}
-
-.header__menu-inner_no-marker {
-  list-style: none;
+  line-height: normal;
 }
 
 .header__link {
-  text-decoration: none;
-  text-transform: lowercase;
-  border-bottom: 1px solid;
-  padding-bottom: 1px;
-}
-
-.header__link:hover {
-  border-bottom: 0;
-  color: #124358a8;
-}
-
-.header__link_active {
-  border-bottom: none;
+  display: list-item;
+  list-style-type: circle;
+  border-bottom: 1px solid black;
 }
 
 .header__logo {
-  display: block;
-  justify-self: center;
-  width: 140px;
+  display: grid;
+  align-content: start;
+  width: 138px;
+  height: 105px;
 }
 
-/* Общий селектор для адреса */
-.address {
-  max-width: 240px;
-  font-size: 18px;
-  font-style: normal;
-  line-height: 1.35;
+.header__logo-image {
+  display: block;
+  align-content: start;
 }
 
 .header__address {
-  justify-self: end;
-}
-
-/* Общий селектор для адреса */
-.address__link {
-  text-decoration: none;
-  border-bottom: 1px solid;
-  padding-bottom: 1px;
-  text-transform: lowercase;
-}
-
-/* Начало стилей секции cover */
-.cover {
-  padding: 165px 50px 50px 50px;
-  margin-bottom: 180px;
-  position: relative;
-  background: url(../images/cover.jpg) no-repeat center;
-  background-size: cover;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--background-black-color);
-  z-index: 0;
-}
-
-.cover__title {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: relative;
-  font-size: 100px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--main-white-color);
-  line-height: 100%;
-  letter-spacing: 0.3em;
-  z-index: 2;
-}
-
-/* Изменение цвета текста при наведении для улучшения вида макета */
-.cover__title:hover {
-  cursor: default;
-  > .cover__title-aligned-text > .cover__title-letter-spacing-extended {
-    color: #00b8ff87;
-    -webkit-transition: color 0.9s, ease-in-out, 0.8s;
-    transition: color 0.9s, ease-in-out, 0.8s;
-  }
-  > .cover__title-aligned-text_center > .cover__title-letter-spacing-extended {
-    color: #3d788f87;
-    -webkit-transition: color 0.8s, ease-in-out, 0.7s;
-    transition: color 0.8s, ease-in-out, 0.7s;
-  }
-  > .cover__title-aligned-text_right > .cover__title-no-letter-spacing {
-    color: #b0c02287;
-    -webkit-transition: color 0.7s, ease-in-out, 0.6s;
-    transition: color 0.7s, ease-in-out, 0.6s;
-  }
-}
-
-.cover__title-aligned-text {
-  display: block;
-  line-height: 1.15;
-}
-
-/* Расположение букв в оверлее */
-.cover__title-letter-spacing-extended {
-  letter-spacing: 0.6em;
-}
-
-.cover__title-aligned-text_center {
-  text-align: center;
-}
-
-.cover__title-aligned-text_right {
-  text-align: right;
-}
-
-.cover__title-no-letter-spacing {
-  letter-spacing: initial;
-}
-
-.cover__description-area {
-  margin-top: 135px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: end;
+}
+
+.contacts-element {
+  width: 240px;
+  padding-right: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-style: normal;
+  color: #000;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.6px;
+}
+
+.mail-address,
+.phone-address {
+  text-decoration: none;
+  display: flex;
+  align-self: flex-start;
+  border-bottom: 0.5px solid black;
+}
+
+.city-address-second,
+.city-address-first {
+  display: flex;
+  align-self: flex-start;
+}
+
+.cover {
+  background-image: url(../images/cover.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.cover__title {
   z-index: 2;
+  padding-top: 165px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-transform: uppercase;
+  row-gap: 19px;
+  grid-template-areas:
+    "start start start"
+    "center center center"
+    "end end end ";
+}
+
+.aligned-text_right,
+.aligned-text_center,
+.aligned-text {
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 30px;
+}
+
+.aligned-text {
+  text-align: start;
+  grid-area: start;
+  line-height: 115%;
+  margin: 0px 50px;
+}
+
+.aligned-text_center {
+  line-height: 100%;
+  text-align: center;
+  grid-area: center;
+  margin: 0px 95px 0px 65px;
+  justify-self: center;
+}
+
+.aligned-text_right {
+  line-height: 70px;
+  text-align: end;
+  grid-area: end;
+  margin: 0px 50px 0px 50px;
+}
+
+.new-letter-spacing {
+  letter-spacing: 60px;
+}
+
+.no-letter-spacing {
+  letter-spacing: 0px;
+}
+
+.cover__description {
+  display: flex;
+  justify-content: space-between;
+  margin: 105px 50px 0px 50px;
+  padding-bottom: 50px;
+}
+
+.bet-button,
+.cover__description-text {
+  color: #fff;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
 }
 
 .cover__description-text {
-  margin-right: 80px;
-  font-size: 22px;
-  color: var(--main-white-color);
-  word-spacing: 18px;
-  text-transform: uppercase;
+  padding-left: 372px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  letter-spacing: 0px;
+  word-spacing: 17px;
 }
 
-.cover-button {
-  border: 1px solid var(--main-white-color);
+.cover__description-text-new-word-spacing {
+  word-spacing: 19px;
+}
+
+.bet-button {
+  display: flex;
   padding: 12px 32px;
-  color: var(--main-white-color);
-  font-weight: 400;
-  font-size: 22px;
-  text-transform: uppercase;
-  background-color: transparent;
+  border: 1px solid #ffffff;
+  background: none;
 }
 
-.cover-button:hover {
-  cursor: pointer;
-  background-color: var(--background-black-color);
-  color: var(--main-white-color);
-  -webkit-transition: background-color 0.5s, ease-in-out, 0.4s;
-  transition: background-color 0.5s, ease-in-out, 0.4s;
-}
-
-/* Начало стилей секции лотов */
 .lots {
-  margin-bottom: 180px;
+  margin: 180px 50px 0px 50px;
+  flex-shrink: 0;
 }
 
 .lots__heading {
-  padding: 0 0 27px 40px;
+  margin-left: 40px;
+  margin-bottom: 27px;
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 40px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
   text-transform: uppercase;
 }
 
 .lots__card-list {
   display: flex;
-  gap: 25px;
+  list-style-type: none;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-content: center;
-  list-style: none;
-}
-
-.lots__card-list-item {
-  flex-grow: 1;
-  width: 430px;
-  min-height: 450px;
 }
 
 .card-link {
   text-decoration: none;
-}
-
-.card-link:hover {
-  opacity: 0.7;
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
+  display: block;
+  height: 100%;
 }
 
 .card {
-  padding: 50px 40px;
+  z-index: 2;
+  flex-grow: 1;
+  width: 430px;
+  min-height: 450px;
   height: 100%;
-  position: relative;
+  padding: 50px 40px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  justify-content: space-between;
 }
 
-/* Изображения лотов аукциона */
-.card_image_film {
+.card_type_film {
   background-image: url(../images/card-lot-01.jpg);
+  background-size: cover;
 }
 
-.card_image_book {
+.card_type_book {
   background-image: url(../images/card-lot-02.jpg);
+  background-size: cover;
 }
 
-.card_image_picture {
+.card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
+  background-size: cover;
 }
 
 .card__title {
-  position: relative;
-  color: var(--main-white-color);
-  font-weight: 700;
+  color: #fff;
+  font-family: Raleway, sans-serif;
   font-size: 22px;
-  line-height: 1.2;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
   text-decoration-line: underline;
   text-transform: uppercase;
-  z-index: 3;
+  text-decoration-skip-ink: none;
 }
 
-.card__description {
-  position: relative;
-  color: var(--main-white-color);
+.card__text {
+  color: #fff;
+  font-family: Raleway, sans-serif;
   font-size: 20px;
-  z-index: 3;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  justify-content: space-around;
 }
 
 .lots__look-more-link {
-  margin-left: 40px;
-  margin-top: 30px;
-  width: fit-content;
-  display: block;
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 20px;
-  color: var(--main-black-color);
-  text-transform: lowercase;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 40px;
   text-decoration: none;
-  border-bottom: 1px solid;
-  padding-bottom: 1px;
 }
 
-.lots__look-more-link:hover {
-  color: #4e4a0c87;
+.lots__look-more-link-text {
+  text-decoration: none;
+  border-bottom: 1px solid black;
 }
 
-/* Начало стилей секции описания аукциона */
 .about {
-  margin: 0 50px;
+  margin: 180px 50px 184px 50px;
+}
+
+.about__column {
   display: grid;
   grid-template-columns: 430px 1fr;
-  gap: 25px;
 }
 
 .about__logo {
-  margin: 0 auto;
+  display: flex;
   width: 240px;
   height: 240px;
-  display: flex;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: var(--main-black-color);
-}
-
-.about__logo:hover {
-  background-color: #1a526887;
-  -webkit-transition: background-color 0.4s ease-in-out;
-  transition: background-color 0.4s ease-in-out;
+  border-radius: 120px;
+  background-color: #000;
+  justify-self: center;
 }
 
 .about__logo-image {
+  display: grid;
+  width: 148px;
+  height: 114px;
   align-self: center;
-  width: 60%;
+  margin-left: 46px;
+}
+
+.about__title-and-text-wrapper {
+  margin: 101px 0px 0px 25px;
+  display: grid;
+  row-gap: 30px;
 }
 
 .about__title {
-  margin-top: 100px;
-  color: var(--main-black-color);
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 40px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
   text-transform: uppercase;
+  margin-bottom: 70px;
 }
 
-.about__description {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.about__text {
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 20px;
-  color: var(--main-black-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
 }
 
-/* Начало стилей подвала */
-.footer {
-  margin: 180px 50px 90px 50px;
+footer {
+  margin: 0px 50px 90px 50px;
   display: flex;
   justify-content: space-between;
 }
 
 .footer__menu {
-  list-style: none;
-  text-transform: lowercase;
-  font-size: 18px;
-  text-align: center;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+}
+
+.footer__menu-list {
+  list-style-type: none;
 }
 
 .footer__menu-link {
-  border-bottom: 1px solid;
-  padding-bottom: 1px;
-  text-decoration: none;
+  display: grid;
+  align-self: center;
+  color: #000;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-skip-ink: none;
 }
 
 .footer__menu-link_active {
+  text-decoration: none;
   border-bottom: none;
 }
 
 .footer__social-list {
+  list-style-type: none;
   display: flex;
-  gap: 47px;
-  list-style: none;
+  gap: 48px;
 }
 
-.footer__social-icon {
+.footer__social-list-item-logo {
   width: 48px;
-  height: 48px;
-  object-fit: cover;
-  -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
-}
-
-.footer__social-icon:hover {
-  background-color: #83e37c;
-  border-radius: 50%;
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
 }
