@@ -103,10 +103,10 @@ body {
 /* у тебя без модификаторов — задаём по позициям */
 .cover_title .accent-span:first-child,
 .cover_title .accent-span:last-child {
-  letter-spacing: 0.6em;
+  letter-spacing: 0.58em;
 } /* ОНО, НАДО */
 .cover_title .accent-span:nth-child(2) {
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
 } /* ТЕБЕ */
 
 .accent-span {
@@ -135,7 +135,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 84px; /* совпадение с направляющими */
+  gap: 86px; /* тонкая подстройка вправо */
   padding: 135px 50px 50px; /* ниже и правее по макету */
 }
 
@@ -146,8 +146,8 @@ body {
   font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 0.3em; /* длина строки */
-  max-width: 640px; /* переносы */
+  word-spacing: 0.32em; /* длина строки */
+  max-width: 628px; /* переносы */
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
@@ -168,8 +168,8 @@ body {
 /* ===== LOTS ===== */
 /* по бокам 24px, чтобы в один ряд входили три карточки (1002px внутри 1052px) */
 .lots {
-  padding: 180px 24px 0;
-}
+  padding: 174px 24px 0;
+} /* чуть опустили шапку секции */
 
 .lots__heading {
   margin: 0 0 27px;
@@ -264,7 +264,7 @@ body {
   grid-template-columns: 334px 1fr; /* колонка под круг */
   align-items: start;
   column-gap: 25px;
-  margin-top: 180px;
+  margin-top: 170px; /* чуть выше для совпадения */
   padding: 0 50px; /* единая сетка со страницей */
 }
 
@@ -335,8 +335,8 @@ body {
   justify-self: end;
   display: flex;
   justify-content: flex-end;
-  gap: 40px;
-  min-width: 224px; /* 48*3 + 40*2 */
+  gap: 48px;
+  min-width: 240px; /* 48*3 + 48*2 */
   margin: 0;
   padding: 0;
   list-style: none;
