@@ -1,4 +1,18 @@
-﻿.header {
+﻿/* ===== БАЗА ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  color: #000;
+}
+
+/* ===== HEADER ===== */
+.header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
@@ -39,7 +53,7 @@
   height: auto;
 }
 
-/* контакты (в хедере прижать вправо) */
+/* контакты (в хедере прижаты вправо) */
 .address {
   max-width: 240px;
   font-size: 18px;
@@ -152,9 +166,10 @@
 }
 
 /* ===== LOTS ===== */
+/* по бокам 24px, чтобы в один ряд входили три карточки (1002px внутри 1052px) */
 .lots {
-  padding: 179px 50px 146px;
-} /* боковые = 50px */
+  padding: 180px 24px 0;
+}
 
 .lots__heading {
   margin: 0 0 27px;
@@ -174,9 +189,9 @@
   list-style: none;
 }
 
-/* карточки тянутся до направляющих, но не уже 334px */
+/* фикс-базис 334px — карточки не растягиваются и не ломают сетку */
 .lots__card-list-item {
-  flex: 1 1 334px;
+  flex: 0 0 334px;
   min-width: 0;
 }
 
