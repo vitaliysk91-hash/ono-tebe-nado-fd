@@ -3,7 +3,6 @@
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   box-sizing: border-box;
-  min-height: 293px;
 }
 
 .header_menu ul {
@@ -18,10 +17,17 @@
   list-style: circle;
   padding-left: 50px;
 }
+
 .header__links-list-item_no-bullit {
   list-style-type: none;
 }
-.header__links-list-item_no-bullit a {
+
+.header__link {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+.header__link_active {
   text-decoration: none;
 }
 
@@ -43,12 +49,13 @@
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
 }
+.address a {
+  color: #000000;
+}
+
 .address.header__address {
   justify-self: end;
   text-align: left;
-}
-.address.header__address a {
-  color: #000000;
 }
 
 .cover {
@@ -61,6 +68,7 @@
   background-size: cover;
   background-position: center;
 }
+
 .cover_title {
   padding: 165px 50px 0px;
   color: #ffffff;
@@ -68,11 +76,12 @@
   font-weight: 700;
   font-size: 100px;
   line-height: 130px;
-  text-decoration-skip-ink: none;
-  text-underline-position: from-font;
   text-transform: uppercase;
   letter-spacing: 0.3em;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
+
 .accent-span {
   display: block;
 }
@@ -96,25 +105,26 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 28px;
-  text-decoration-skip-ink: none;
-  text-underline-position: from-font;
   text-transform: uppercase;
   word-spacing: 20px;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 .bet-button {
   justify-self: end;
   width: 256px;
-  height: 51px;
+  min-height: 51px;
+  padding: 12px 32px;
   border: 1px solid #ffffff;
   color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 22px;
   line-height: 25.83px;
-  text-decoration-skip-ink: none;
-  text-underline-position: from-font;
   text-transform: uppercase;
   background-color: transparent;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 
 .overlay {
@@ -138,9 +148,9 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 46.96px;
+  text-transform: uppercase;
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
-  text-transform: uppercase;
 }
 
 .lots__card-list {
@@ -152,7 +162,6 @@
   list-style-type: none;
   background-repeat: no-repeat;
 }
-
 .lots__card-list-item {
   width: 334px;
   min-height: 596px;
@@ -169,6 +178,18 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
+  background-size: cover;
+  background-position: bottom;
+}
+.card_type_film {
+  background-image: url(../images/card-lot-01.jpg);
+}
+.card_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+}
+.card_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
 }
 
 .card__title {
@@ -194,6 +215,7 @@
   line-height: 24px;
   text-align: left;
 }
+
 .lots__look-more-link {
   height: 100%;
   padding-left: 40px;
@@ -204,31 +226,13 @@
   text-underline-position: from-font;
 }
 
-.card_type_film {
-  background-image: url(../images/card-lot-01.jpg);
-  background-size: cover;
-  background-position: bottom;
-}
-.card_type_book {
-  background-image: url(../images/card-lot-02.jpg);
-  background-size: cover;
-  background-position: bottom;
-}
-.card_type_picture {
-  background-image: url(../images/card-lot-03.jpg);
-  background-size: cover;
-  background-position: bottom;
-}
-
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
   box-sizing: border-box;
-  min-height: 595px;
   margin-top: 120px;
   padding: 0 24px;
 }
-
 .about__logo {
   position: relative;
   top: 35px;
@@ -252,16 +256,15 @@
   font-size: 40px;
   line-height: 46.96px;
   text-align: left;
+  text-transform: uppercase;
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
-  text-transform: uppercase;
 }
 .about_box {
   justify-self: end;
   width: 693px;
   padding-top: 133px;
 }
-
 .about__text {
   margin-bottom: 24px;
   font-family: "Raleway", sans-serif;
@@ -281,7 +284,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   box-sizing: border-box;
-  min-height: 180px;
   margin-top: 180px;
   padding-right: 50px;
   padding-left: 50px;
@@ -316,7 +318,4 @@
 .address.footer__address {
   justify-self: start;
   text-align: left;
-}
-.address.footer__address a {
-  color: #000000;
 }
