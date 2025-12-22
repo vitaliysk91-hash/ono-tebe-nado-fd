@@ -350,20 +350,6 @@
   line-height: 24.3px;
 }
 
-.footer__address {
-  justify-self: start;
-  max-width: 265px;
-  font-style: normal;
-}
-
-.footer__address a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 1px;
-  text-decoration-skip-ink: none;
-}
-
 .footer__menu {
   justify-self: center;
   padding-top: 1px;
