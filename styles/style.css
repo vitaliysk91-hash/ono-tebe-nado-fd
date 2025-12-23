@@ -1,6 +1,4 @@
-﻿/* header */
-
-.header {
+﻿.header {
   display: grid;
   grid-template-columns: 1fr 148px 1fr;
   align-items: center;
@@ -13,7 +11,7 @@
   gap: 34px;
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: circle;
   font-size: 18px;
 }
 
@@ -68,8 +66,6 @@
   margin: 0;
 }
 
-/* cover */
-
 .cover {
   position: relative;
   box-sizing: border-box;
@@ -85,7 +81,6 @@
   background-color: #000000;
 }
 
-/* контейнер заголовка = отдельный блок 1000×385 по координатам из макета */
 .cover_title {
   position: absolute;
   top: 165px;
@@ -110,7 +105,6 @@
   max-width: 100%;
 }
 
-/* ОНО — левый верхний */
 .cover_title .accent-span:nth-child(1) {
   grid-column: 1;
   grid-row: 1;
@@ -119,7 +113,6 @@
   text-align: left;
 }
 
-/* ТЕБЕ — центр */
 .cover_title .accent-span:nth-child(2) {
   grid-column: 1/ -1;
   grid-row: 2;
@@ -127,7 +120,6 @@
   text-align: center;
 }
 
-/* НАДО — правый нижний */
 .cover_title .accent-span:nth-child(3) {
   grid-column: 3;
   grid-row: 3;
@@ -136,14 +128,27 @@
   text-align: right;
 }
 
-.letter-spacing-wide {
-  letter-spacing: 0.3em;
+.no-letter-spacing {
+  letter-spacing: 0;
 }
+
 .letter-spacing-extended {
   letter-spacing: 0.3em;
 }
 
-/* описание — отдельный блок внизу cover */
+.letter-spacing-wide {
+  letter-spacing: 0.3em;
+}
+
+.letter-spacing-extended {
+  margin-right: 0;
+}
+
+.cover_title .accent-span:nth-child(1),
+.cover_title .accent-span:nth-child(3) {
+  text-align: initial;
+}
+
 .cover__description {
   position: absolute;
   left: 50px;
@@ -283,8 +288,6 @@
   text-underline-offset: 4px;
 }
 
-/* about */
-
 .about {
   display: grid;
   grid-template-columns: 290px 1fr;
@@ -341,8 +344,6 @@
 .about__text:last-child {
   margin-bottom: 0;
 }
-
-/* footer */
 
 .footer {
   display: grid;
