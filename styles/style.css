@@ -140,10 +140,6 @@
   letter-spacing: 0.3em;
 }
 
-.letter-spacing-extended {
-  margin-right: 0;
-}
-
 .cover_title .accent-span:nth-child(1),
 .cover_title .accent-span:nth-child(3) {
   text-align: initial;
